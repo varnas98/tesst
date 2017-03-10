@@ -12,6 +12,18 @@ int EditMoney(){
 	return money;
 }
 
+int EditDay(){
+	int day; //Размер вклада
+	do{
+		printf("Введите срок вклада (в днях): \n ");
+		scanf("%d", &day);
+		if((day>365)||(day<1)){
+			printf("Срок вклада должен быть от 1 до 365 дней!\n");
+		}else break;
+	}while(1);
+	return day;
+}
+
 int main(void){
 	int money = EditMoney();
 	int day = EditDay();
