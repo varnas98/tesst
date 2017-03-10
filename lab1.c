@@ -1,5 +1,29 @@
 #include <stdio.h>
 
+int EditMoney(){
+
+	int money; //Размер вклада+	do{
+		printf("Введите размер вклада (в рублях): \n ");
+		scanf("%d", &money);
+		if(money<10000){
+			printf("Сумма вклада должно быть не меннее 10 т.р.!\n");
+		}else break;
+	}while(1);
+	return money;
+}
+
+int EditDay(){
+	int day; //Размер вклада
+	do{
+		printf("Введите срок вклада (в днях): \n ");
+		scanf("%d", &day);
+		if((day>365)||(day<1)){
+			printf("Срок вклада должен быть от 1 до 365 дней!\n");
+		}else break;
+	}while(1);
+	return day;
+}
+
 
 int main(void){
 	int money = EditMoney();
