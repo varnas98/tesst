@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int EditMoney(){
-
-	int money; //Размер вклада+	do{
+	int money; //Размер вклада
+	do{
 		printf("Введите размер вклада (в рублях): \n ");
 		scanf("%d", &money);
 		if(money<10000){
@@ -24,6 +24,17 @@ int EditDay(){
 	return day;
 }
 
+int Procent(int money, int proc){
+	return (money/100)*proc;	
+}
+
+int Vkad(int money, int day, int srok1, int srok2, int srok3){
+	int srok;
+	if(day<121){ srok=srok1; }else{
+	if(day<241){ srok=srok2; }else{
+	if(day<366) srok=srok3;}}
+	return Procent(money, srok);
+}
 
 int main(void){
 	int money = EditMoney();
